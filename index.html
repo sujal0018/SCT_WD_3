@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>XO Arena</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+	</head>
+	<body>
+		<div class="glass-container">
+			<header>
+				<div class="top-row">
+					<h1>XO<span>Arena</span></h1>
+					<button
+						id="themeToggle"
+						class="icon-btn"
+						aria-label="Toggle Theme"
+					>
+						🌓
+					</button>
+				</div>
+
+				<div class="setup-area">
+					<div class="segmented-control">
+						<button id="pvpBtn" onclick="setMode('pvp')">
+							PvP
+						</button>
+						<button
+							id="pvaBtn"
+							class="active"
+							onclick="setMode('pva')"
+						>
+							Vs Computer
+						</button>
+					</div>
+
+					<div class="difficulty-wrapper" id="diffWrapper">
+						<select id="difficultySelect">
+							<option value="easy">Level: Easy</option>
+							<option value="medium">Level: Medium</option>
+							<option value="hard" selected>Level: Hard</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="scoreboard">
+					<div class="player-card x-card" id="cardX">
+						<span class="label">Player X</span>
+						<span class="score" id="scoreX">0</span>
+					</div>
+					<div class="player-card o-card" id="cardO">
+						<span class="label">Player O</span>
+						<span class="score" id="scoreO">0</span>
+					</div>
+				</div>
+				<div id="status" class="status-bubble">Your Turn</div>
+			</header>
+
+			<main id="board" class="board"></main>
+
+			<button class="reset-btn" onclick="resetGame()">
+				Restart Game
+			</button>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
